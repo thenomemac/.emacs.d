@@ -23,5 +23,6 @@
 ;; load all of the kwp-* configurations
 (require 'kwp-packages)
 (require 'kwp-layout)
+(require 'kwp-misc)
 
 ;;; init.el ends here

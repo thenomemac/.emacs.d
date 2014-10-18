@@ -37,16 +37,15 @@
 (add-hook 'text-mode-hook (lambda() (flyspell-mode 1)))
 
 ;; ----------------------------------------
-;; set the default startup directory
-;; always use rainbow delims!
-(add-to-list 'load-path "~/.emacs.d/externals/rainbow-delimiters/")
+;; enable global rainbow delimiters
 (require 'rainbow-delimiters)
-(global-rainbow-delimiters-mode)
+
+;; rainbow-delimiters got rid of global mode ...
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'text-mode-hook 'rainbow-delimiters-mode)
 
 ;; ----------------------------------------
-;; set the default startup directory
-;; no backup files (well, move them)
-;;(setq make-backup-files nil) ;;
+;; move the backups
 (setq backup-directory-alist `(("." . "~/.emacs_backups")))
 
 (provide 'kwp-misc)
