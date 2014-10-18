@@ -12,7 +12,16 @@
 (define-key global-map (kbd "C--") 'text-scale-decrease)
 
 ;; ----------------------------------------
-;; magit status 
+;; use ibuffer
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; ----------------------------------------
+;; indent on RET
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+
+;; ----------------------------------------
+;; magit status
 (global-set-key (kbd "C-c g") 'magit-status)
 
 (provide 'kwp-keybindings)

@@ -8,8 +8,11 @@
 
 ;; ----------------------------------------
 ;; set the indent settings
-(set-default `indent-tabs-mode nil)
-(setq tab-width 4)
+(setq tab-width 2)
+
+;; ----------------------------------------
+;; column numbers
+(global-linum-mode t)
 
 ;; ----------------------------------------
 ;; set the feedbacks
