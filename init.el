@@ -24,5 +24,6 @@
 (require 'kwp-packages)
 (require 'kwp-layout)
 (require 'kwp-misc)
+(require 'kwp-keybindings)
 
 ;;; init.el ends here
