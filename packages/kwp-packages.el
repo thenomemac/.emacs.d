@@ -18,6 +18,7 @@
 (defvar myPackages
   '(cyberpunk-theme
     flyspell
+    magit
     powerline)
 )
 
