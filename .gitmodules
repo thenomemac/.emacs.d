@@ -1,3 +1,9 @@
 [submodule "externals/rainbow-delimiters"]
 	path = externals/rainbow-delimiters
 	url = https://github.com/jlr/rainbow-delimiters.git
+[submodule "externals/puppet-syntax-emacs"]
+	path = externals/puppet-syntax-emacs
+	url = https://github.com/puppetlabs/puppet-syntax-emacs.git
+[submodule "externals/tern"]
+	path = externals/tern
+	url = https://github.com/marijnh/tern.git

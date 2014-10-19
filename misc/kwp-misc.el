@@ -3,6 +3,10 @@
 ;;; Code:
 
 ;; ----------------------------------------
+;; set the PATH variable (get it)
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+
+;; ----------------------------------------
 ;; set the default startup directory
 (setq default-directory "~/Documents/projects/" )
 
