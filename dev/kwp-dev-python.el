@@ -24,7 +24,9 @@
 
 ;; ----------------------------------------
 ;; add hooks for python mode startup
-(add-hook 'python-mode-hook '(lambda () (autopair-mode)))
+(add-hook 'python-mode-hook '(lambda ()
+			       (autopair-mode)
+			       (flycheck-mode)))
 
 (provide 'kwp-dev-python)
 
