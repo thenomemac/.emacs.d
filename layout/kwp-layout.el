@@ -35,6 +35,10 @@
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))
 
+;; ----------------------------------------
+;; override the background color
+(set-background-color "gray12")
+
 (provide 'kwp-layout)
 
 ;;; kwp-layout.el ends here
