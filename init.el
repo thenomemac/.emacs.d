@@ -27,4 +27,9 @@
 (require 'kwp-keybindings)
 (require 'kwp-dev)
 
+
+;; --------------------------------------------------
+;; load custom externals
+(require 'pbcopy)
+
 ;;; init.el ends here
