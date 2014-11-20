@@ -27,6 +27,12 @@
 ;; magit status
 (global-set-key (kbd "C-c g") 'magit-status)
 
+;; ----------------------------------------
+;; 5 line jump previous next
+(global-set-key (kbd "M-n") (lambda () (interactive) (next-line 5)))
+(global-set-key (kbd "M-p") (lambda () (interactive) (previous-line 5)))
+
+
 (provide 'kwp-keybindings)
 
 ;;; kwp-keybindings.el ends here
