@@ -3,7 +3,8 @@
 ;;; Code:
 
 (defun add-line-numbers ()
-  (linum-mode 1))
+  (linum-mode 1)
+  (setq linum-format "  %d  "))
 
 (defun local-comment-auto-fill ()
   (set (make-local-variable 'comment-auto-fill-only-comments) t)
