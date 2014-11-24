@@ -16,6 +16,10 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; ----------------------------------------
+;; indent-region
+(global-set-key (kbd "C-i") 'indent-region)
+
+;; ----------------------------------------
 ;; autocorrect word with flyspell
 (global-set-key (kbd "C-c a") 'flyspell-auto-correct-word)
 
