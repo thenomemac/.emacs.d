@@ -29,7 +29,14 @@
 
 
 ;; --------------------------------------------------
-;; load custom externals
-(require 'pbcopy)
+;; copy tools
+(if (eq system-type 'darwin)
+    ;; use pbcopy for macosx
+    (require 'pbcopy)
+)
+
+;; --------------------------------------------------
+;; start page
+(find-file "~/.emacs.d/misc/start.txt")
 
 ;;; init.el ends here
