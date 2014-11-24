@@ -36,7 +36,7 @@
 )
 
 ;; --------------------------------------------------
-;; start page
-(find-file "~/.emacs.d/misc/start.txt")
+;; start page (one day figure out how to write to scratch)
+;; (find-file "~/.emacs.d/misc/start.txt")
 
 ;;; init.el ends here
