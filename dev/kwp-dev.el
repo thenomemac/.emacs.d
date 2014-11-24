@@ -2,10 +2,6 @@
 
 ;;; Code:
 
-(defun add-line-numbers ()
-  (linum-mode 1)
-  (setq linum-format "  %d  "))
-
 (defun local-comment-auto-fill ()
   (set (make-local-variable 'comment-auto-fill-only-comments) t)
   (auto-fill-mode t))
@@ -19,7 +15,6 @@
 
 (defvar dev-hook nil
   "Hook that gets run on activation of any programming mode.")
-(add-hook 'dev-hook 'add-line-numbers)
 (add-hook 'dev-hook 'local-comment-auto-fill)
 (add-hook 'dev-hook 'add-auto-complete)
 (add-hook 'dev-hook 'dev-before-save-hook)
