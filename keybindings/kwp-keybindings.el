@@ -16,10 +16,6 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; ----------------------------------------
-;; indent on RET
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
-;; ----------------------------------------
 ;; autocorrect word with flyspell
 (global-set-key (kbd "C-c a") 'flyspell-auto-correct-word)
 
