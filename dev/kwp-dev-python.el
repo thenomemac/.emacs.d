@@ -23,6 +23,12 @@
 (setq jedi:complete-on-dot t)
 
 ;; ----------------------------------------
+;; indent on RET
+(add-hook 'python-mode-hook '(lambda ()
+			       (define-key global-map (kbd "RET") 'newline-and-indent)))
+
+
+;; ----------------------------------------
 ;; add hooks for python mode startup
 (add-hook 'python-mode-hook '(lambda ()
 			       (autopair-mode)
