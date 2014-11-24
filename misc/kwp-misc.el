@@ -16,6 +16,7 @@
 
 ;; ----------------------------------------
 ;; column numbers
+(require 'linum+)
 (global-linum-mode t)
 
 ;; ----------------------------------------
@@ -53,7 +54,10 @@
 
 ;; ----------------------------------------
 ;; move the backups
-(setq backup-directory-alist `(("." . "~/.emacs_backups")))
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 (provide 'kwp-misc)
 
