@@ -17,7 +17,7 @@
 
 ;; ----------------------------------------
 ;; indent-region
-(global-set-key (kbd "C-i") 'indent-region)
+;; (global-set-key (kbd "C-i") 'indent-region)
 
 ;; ----------------------------------------
 ;; autocorrect word with flyspell
