@@ -15,6 +15,7 @@
   '(auto-complete
     autopair
     cyberpunk-theme
+    ein
     elpy
     exec-path-from-shell
     flycheck
