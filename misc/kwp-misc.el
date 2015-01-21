@@ -45,14 +45,6 @@
 (add-hook 'text-mode-hook (lambda() (flyspell-mode 1)))
 
 ;; ----------------------------------------
-;; enable global rainbow delimiters
-(require 'rainbow-delimiters)
-
-;; rainbow-delimiters got rid of global mode ...
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'text-mode-hook 'rainbow-delimiters-mode)
-
-;; ----------------------------------------
 ;; move the backups
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))

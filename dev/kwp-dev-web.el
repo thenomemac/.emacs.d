@@ -4,7 +4,6 @@
 
 (add-hook 'web-mode-hook 'run-dev-hook)
 (auto-complete-mode nil)
-(rainbow-delimiters-mode nil)
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
