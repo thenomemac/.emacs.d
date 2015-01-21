@@ -9,6 +9,12 @@
 
 (require 'puppet-mode)
 
+;; ----------------------------------------
+;; add hooks for puppet mode startup
+(add-hook 'puppet-mode-hook '(lambda ()
+			       (autopair-mode)
+			       (flycheck-mode)))
+
 (provide 'kwp-dev-puppet)
 
 ;;; kwp-dev-puppet.el ends here
