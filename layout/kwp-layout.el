@@ -26,6 +26,11 @@
 (add-hook 'window-setup-hook 'set-bg)
 
 ;; ----------------------------------------
+;; set the default cell color for IPython
+(custom-set-faces
+ '(ein:cell-input-area ((t (:background "black")))))
+
+;; ----------------------------------------
 ;; set the default font
 (set-default-font "Inconsolas 16")
 
