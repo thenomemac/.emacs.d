@@ -27,6 +27,7 @@
     magit
     markdown-mode
     powerline
+    rainbow-delimiters
     robe
     web-mode
     yaml-mode)

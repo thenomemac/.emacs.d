@@ -3,6 +3,7 @@
 ;;; Code:
 
 (add-hook 'python-mode-hook 'run-dev-hook)
+(auto-complete-mode nil)  ;; use default: company mode
 
 ;; ----------------------------------------
 ;; use elpy mode
