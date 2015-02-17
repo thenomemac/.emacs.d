@@ -4,3 +4,6 @@
 [submodule "externals/tern"]
 	path = externals/tern
 	url = https://github.com/marijnh/tern.git
+[submodule "externals/mapserver-emacs-mode"]
+	path = externals/mapserver-emacs-mode
+	url = https://github.com/AxxL/mapserver-emacs-mode.git

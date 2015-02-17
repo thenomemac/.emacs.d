@@ -38,6 +38,7 @@
 (require 'kwp-dev-terminal)
 (require 'kwp-dev-web)
 (require 'kwp-dev-yaml)
+(require 'kwp-dev-mapserver)
 
 (provide 'kwp-dev)
 
