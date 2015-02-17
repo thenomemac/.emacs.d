@@ -39,6 +39,7 @@
 (require 'kwp-dev-web)
 (require 'kwp-dev-yaml)
 (require 'kwp-dev-mapserver)
+(require 'kwp-dev-nginx)
 
 (provide 'kwp-dev)
 

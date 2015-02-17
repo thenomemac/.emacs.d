@@ -6,6 +6,8 @@
 
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("marmalade" . "https://marmalade-repo.org/packages/") t)
 
 (package-initialize)
 (when (not package-archive-contents)
@@ -26,6 +28,7 @@
     js2-refactor
     magit
     markdown-mode
+    nginx-mode
     powerline
     rainbow-delimiters
     robe
