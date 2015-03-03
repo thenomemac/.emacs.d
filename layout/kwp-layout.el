@@ -46,8 +46,9 @@
 
 ;; ----------------------------------------
 ;; use powerline, cause it's nice
-(require 'powerline)
-(powerline-default-theme)
+;; currently disable because i could find a workaround for a warning
+;; (require 'powerline)
+;; (powerline-default-theme)
 
 ;; ----------------------------------------
 ;; format the frame title
