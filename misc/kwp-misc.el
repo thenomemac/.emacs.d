@@ -8,7 +8,7 @@
 
 ;; ----------------------------------------
 ;; set the default startup directory
-(setq default-directory "~/Documents/projects/" )
+(setq default-directory "~/projects/" )
 
 ;; ----------------------------------------
 ;; set the indent settings
