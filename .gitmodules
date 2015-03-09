@@ -7,3 +7,6 @@
 [submodule "externals/mapserver-emacs-mode"]
 	path = externals/mapserver-emacs-mode
 	url = https://github.com/AxxL/mapserver-emacs-mode.git
+[submodule "externals/dockerfile-mode"]
+	path = externals/dockerfile-mode
+	url = https://github.com/spotify/dockerfile-mode.git
