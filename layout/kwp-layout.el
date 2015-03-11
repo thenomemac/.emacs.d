@@ -11,17 +11,11 @@
 (defun set-bg ()
 
   ;; set the defaults
-  (set-face-attribute 'default nil :background "grey12")
-  (set-face-attribute 'fringe nil :background "grey12")
-  (set-face-attribute 'linum nil :background "grey12" :foreground "brightblack")
+  (set-face-attribute 'default nil :background "#262626")
+  (set-face-attribute 'fringe nil :background "brightblack")
+  (set-face-attribute 'linum nil :background "#262626" :foreground "brightblack")
 
-  ;;; override the defaults for terminal user
-  (unless (display-graphic-p (selected-frame))
-    ;;(set-face-background 'default "unspecified-bg" (selected-frame))
-    (set-face-attribute 'default nil :background "unspecified-bg")
-    (set-face-attribute 'fringe nil :background "unspecified-bg")
-    (set-face-attribute 'linum nil :background "unspecified-bg" :foreground "brightblack")
-    ))
+  )
 
 (add-hook 'window-setup-hook 'set-bg)
 
