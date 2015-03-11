@@ -41,6 +41,7 @@
 (require 'kwp-dev-mapserver)
 (require 'kwp-dev-nginx)
 (require 'kwp-dev-docker)
+(require 'kwp-dev-jade)
 
 (provide 'kwp-dev)
 

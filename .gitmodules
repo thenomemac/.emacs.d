@@ -10,3 +10,6 @@
 [submodule "externals/dockerfile-mode"]
 	path = externals/dockerfile-mode
 	url = https://github.com/spotify/dockerfile-mode.git
+[submodule "externals/jade-mode"]
+	path = externals/jade-mode
+	url = https://github.com/brianc/jade-mode.git
