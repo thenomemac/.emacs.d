@@ -33,7 +33,7 @@
 (require 'kwp-dev-python)
 (require 'kwp-dev-markdown)
 (require 'kwp-dev-puppet)
-(require 'kwp-dev-javascript)
+;; (require 'kwp-dev-javascript)
 (require 'kwp-dev-ruby)
 (require 'kwp-dev-terminal)
 (require 'kwp-dev-web)
