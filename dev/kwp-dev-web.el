@@ -27,6 +27,8 @@
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
 
+(rainbow-delimiters-mode 0)
+
 (provide 'kwp-dev-web)
 
 ;;; kwp-dev-web.el ends here
