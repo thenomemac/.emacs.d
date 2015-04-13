@@ -1,4 +1,5 @@
-/auto-save-list/
+*~
 /elpa/
-/.python-environments/
-/ac-comphist.dat
+/ido.last
+/request/
+/places

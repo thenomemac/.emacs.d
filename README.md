@@ -1,26 +1,16 @@
-kwp-emacs
-=========
+## kp-emacs
+---
 
-A complete customization built for Emacs for MacOSX
-http://emacsformacosx.com/
+My emacs custom configuration.
 
+### Quickstart
 
-installation
-=========
+Coming Soon
 
-### get the repository
+### Included Customization
 
-```
-cd ~
-rm -rf .emacs.d/
-git clone https://github.com/kpurdon/kwp-emacs.git
-git submodule update --init --recursive
-```
+Coming Soon
 
-### setup javascript environment
-#### install tern packages
+### License
 
-```
-cd ~/.emacs.d/externals/tern
-npm install
-```
+GPLv3 - See LICENSE
