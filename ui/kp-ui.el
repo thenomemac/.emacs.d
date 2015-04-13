@@ -6,8 +6,8 @@
 
 (require 'solarized-light-theme)
 
-(require `linum+)
 (global-linum-mode t)
+(setq linum-format "%4d \u2502 ")
 
 (require 'neotree)
 
