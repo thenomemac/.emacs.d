@@ -23,6 +23,7 @@
     neotree
     puppet-mode
     solarized-theme))
+    yaml-mode))
 
 
 (mapc #'(lambda (package)
