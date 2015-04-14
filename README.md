@@ -7,6 +7,8 @@ My emacs custom configuration.
 
 Coming Soon
 
+TODO: Must install `autopep8` for python mode
+
 ### Included Customization
 
 Coming Soon
