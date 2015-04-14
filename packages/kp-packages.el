@@ -22,7 +22,8 @@
     magit
     neotree
     puppet-mode
-    solarized-theme))
+    py-autopep8
+    solarized-theme
     yaml-mode))
 
 

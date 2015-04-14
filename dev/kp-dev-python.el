@@ -4,6 +4,10 @@
 
 (elpy-enable)
 
+(require 'py-autopep8)
+(setq py-autopep8-options '("--max-line-length=100"))
+(add-hook 'before-save-hook 'py-autopep8-before-save)
+
 ;; use flycheck not flymake
 (when (require 'flycheck nil t)
   (setq elpy-modules
