@@ -6,6 +6,8 @@
 
 (require 'kp-dev-python)
 (require 'kp-dev-puppet)
+(require 'kp-dev-markdown)
+(require 'kp-dev-yaml)
 
 (provide 'kp-dev)
 

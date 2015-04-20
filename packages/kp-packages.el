@@ -21,6 +21,7 @@
     flycheck
     flycheck-color-mode-line
     magit
+    markdown-mode
     neotree
     puppet-mode
     py-autopep8
