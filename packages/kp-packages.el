@@ -14,7 +14,8 @@
   (package-refresh-contents))
 
 (defvar myPackages
-  '(better-defaults
+  '(ample-theme
+    better-defaults
     ein
     elpy
     flycheck
@@ -23,7 +24,6 @@
     neotree
     puppet-mode
     py-autopep8
-    solarized-theme
     yaml-mode))
 
 

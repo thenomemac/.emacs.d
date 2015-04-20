@@ -4,7 +4,8 @@
 
 (setq inhibit-startup-message t)
 
-(require 'solarized-light-theme)
+(load-theme `ample t)
+(enable-theme `ample)
 
 (global-linum-mode t)
 (setq linum-format "%4d \u2502 ")
