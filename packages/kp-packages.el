@@ -26,6 +26,7 @@
     pbcopy
     puppet-mode
     py-autopep8
+    sass-mode
     yaml-mode))
 
 
