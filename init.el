@@ -25,4 +25,7 @@
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 
+(require 'pbcopy)
+(turn-on-pbcopy)
+
 ;;; init.el ends here

@@ -23,6 +23,7 @@
     magit
     markdown-mode
     neotree
+    pbcopy
     puppet-mode
     py-autopep8
     yaml-mode))
