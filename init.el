@@ -1,7 +1,7 @@
 ;;; init --- configuration initialization
 ;;; Commentary:
 
-;; Thanks to Kevin Beam and Matt Savoie for stagting me
+;; Thanks to Kevin Beam and Matt Savoie for starting me
 ;; on my emacs journey. Without there encouragment,
 ;; hand-me-down configurations and help along the way
 ;; I would not be a part of the wonderful emacs community!
