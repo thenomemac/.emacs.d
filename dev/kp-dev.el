@@ -8,6 +8,7 @@
 (require 'kp-dev-puppet)
 (require 'kp-dev-markdown)
 (require 'kp-dev-yaml)
+(require 'kp-dev-web)
 
 (provide 'kp-dev)
 
