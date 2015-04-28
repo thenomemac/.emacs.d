@@ -11,6 +11,7 @@
 (require 'kp-dev-web)
 (require 'kp-dev-sass)
 (require 'kp-dev-docker)
+(require 'kp-dev-ruby)
 
 (provide 'kp-dev)
 
