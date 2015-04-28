@@ -16,6 +16,7 @@
 (defvar myPackages
   '(ample-theme
     better-defaults
+    dockerfile-mode
     ein
     elpy
     flycheck
