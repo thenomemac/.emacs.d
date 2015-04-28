@@ -9,6 +9,7 @@
 (require 'kp-dev-markdown)
 (require 'kp-dev-yaml)
 (require 'kp-dev-sass)
+(require 'kp-dev-ruby)
 
 (provide 'kp-dev)
 

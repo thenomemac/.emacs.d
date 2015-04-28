@@ -12,4 +12,4 @@
 
 (provide 'kp-dev-puppet)
 
-;;; kwp-dev-puppet.el ends here
+;;; kp-dev-puppet.el ends here
