@@ -27,6 +27,7 @@
     puppet-mode
     py-autopep8
     sass-mode
+    web-mode
     yaml-mode))
 
 

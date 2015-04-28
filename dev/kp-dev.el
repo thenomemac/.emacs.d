@@ -10,6 +10,7 @@
 (require 'kp-dev-yaml)
 (require 'kp-dev-web)
 (require 'kp-dev-sass)
+(require 'kp-dev-docker)
 
 (provide 'kp-dev)
 
