@@ -28,6 +28,7 @@ When you start emacs all of the required packages will be installed and settings
 * YAML
 * Web (HTML/JS/CSS)
 * SASS
+* Jekyll Blog (Polymode Support)
 
 ### License
 
