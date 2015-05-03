@@ -1,26 +1,18 @@
-kwp-emacs
-=========
+## kp-emacs
+---
 
-A complete customization built for Emacs for MacOSX
-http://emacsformacosx.com/
+My emacs custom configuration.
 
+### Quickstart
 
-installation
-=========
+Coming Soon
 
-### get the repository
+TODO: Must install `autopep8` for python mode
 
-```
-cd ~
-rm -rf .emacs.d/
-git clone https://github.com/kpurdon/kwp-emacs.git
-git submodule update --init --recursive
-```
+### Included Customization
 
-### setup javascript environment
-#### install tern packages
+Coming Soon
 
-```
-cd ~/.emacs.d/externals/tern
-npm install
-```
+### License
+
+GPLv3 - See LICENSE

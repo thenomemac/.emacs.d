@@ -1,42 +1,31 @@
-;;; init --- kpurdon emacs config file
+;;; init --- configuration initialization
 ;;; Commentary:
 
-;; Like most I was "recruited" into the Emacs world and 
-;; given a few hand-me-down configs to start off my new
-;; Emacs adventure.
+;; Thanks to Kevin Beam and Matt Savoie for starting me
+;; on my emacs journey. Without there encouragment,
+;; hand-me-down configurations and help along the way
+;; I would not be a part of the wonderful emacs community!
 ;;
-;; Kevin Beam: https://gitorious.org/kwbeam/kwb-emacs/
+;; Kevin Beam:  https://github.com/kwbeam/kwb-emacs
 ;; Matt Savoie: https://github.com/flamingbear/emacs-config
 ;;
-;; This configuration is a mashup of the two above, plus
-;; lots of internet Emacs wizardry and my own inputs!
+;; This configuration has grown from the two above.
 
 ;;; Code:
-
-;; --------------------------------------------------
-;; add all subdirectories to path
 
 (let ((default-directory "~/.emacs.d/"))
   (normal-top-level-add-subdirs-to-load-path))
 
-;; --------------------------------------------------
-;; load all of the kwp-* configurations
-(require 'kwp-packages)
-(require 'kwp-layout)
-(require 'kwp-misc)
-(require 'kwp-keybindings)
-(require 'kwp-dev)
+(setq default-directory "~/projects/" )
 
+(require 'kp-packages)
+(require 'kp-ui)
+(require 'kp-kbd)
+(require 'kp-dev)
 
-;; --------------------------------------------------
-;; copy tools
-(if (eq system-type 'darwin)
-    ;; use pbcopy for macosx
-    (require 'pbcopy)
-)
+(setq magit-last-seen-setup-instructions "1.4.0")
 
-;; --------------------------------------------------
-;; start page (one day figure out how to write to scratch)
-;; (find-file "~/.emacs.d/misc/start.txt")
+(require 'pbcopy)
+(turn-on-pbcopy)
 
 ;;; init.el ends here

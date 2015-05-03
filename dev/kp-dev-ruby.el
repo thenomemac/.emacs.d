@@ -1,14 +1,8 @@
-;;; kwp-dev-ruby --- ruby configuration for kwp-emacs
+;;; kp-dev-ruby --- ruby configuration
 
 ;;; Code:
 
 (add-hook 'ruby-mode-hook 'run-dev-hook)
-
-(autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
-(add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
-
-(add-hook 'ruby-mode-hook 'robe-mode)
-(add-hook 'robe-mode-hook 'ac-robe-setup)
 
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
@@ -20,6 +14,10 @@
 (add-to-list 'auto-mode-alist '("\\Puppetfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\Vagrantfile$" . ruby-mode))
 
-(provide 'kwp-dev-ruby)
+(add-hook 'ruby-mode-hook '(lambda ()
+                             (electric-pair-mode)
+                             (flycheck-mode)))
 
-;;; kwp-dev-ruby.el ends here
+(provide 'kp-dev-ruby)
+
+;;; kp-dev-ruby.el ends here

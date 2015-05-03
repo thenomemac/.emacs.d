@@ -1,4 +1,4 @@
-;;; kwp-packages -- package installation for kwp-emacs
+;;; kp-packages -- package installation
 
 ;;; Code:
 
@@ -14,33 +14,29 @@
   (package-refresh-contents))
 
 (defvar myPackages
-  '(auto-complete
-    autopair
-    cyberpunk-theme
+  '(ample-theme
+    better-defaults
+    dockerfile-mode
     ein
     elpy
-    exec-path-from-shell
     flycheck
     flycheck-color-mode-line
-    flyspell
-    inf-ruby
-    js2-mode
-    js2-refactor
     magit
     markdown-mode
-    nginx-mode
-    powerline
-    rainbow-delimiters
-    robe
+    neotree
+    pbcopy
+    puppet-mode
+    py-autopep8
+    sass-mode
     web-mode
-    yaml-mode)
-)
+    yaml-mode))
+
 
 (mapc #'(lambda (package)
 	  (unless (package-installed-p package)
 	    (package-install package)))
       myPackages)
 
-(provide 'kwp-packages)
+(provide 'kp-packages)
 
 ;;; kwp-packages.el ends here
