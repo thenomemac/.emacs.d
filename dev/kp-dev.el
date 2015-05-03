@@ -12,6 +12,7 @@
 (require 'kp-dev-sass)
 (require 'kp-dev-docker)
 (require 'kp-dev-ruby)
+(require 'kp-dev-jekyll)
 
 (provide 'kp-dev)
 

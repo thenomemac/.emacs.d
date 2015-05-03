@@ -21,6 +21,7 @@
     elpy
     flycheck
     flycheck-color-mode-line
+    jekyll-modes
     magit
     markdown-mode
     neotree
