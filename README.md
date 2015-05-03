@@ -1,17 +1,33 @@
 ## kp-emacs
 ---
 
-My emacs custom configuration.
+Emacs configuration for [Emacs for MacOSX](http://emacsformacosx.com/)
 
 ### Quickstart
 
-Coming Soon
+#### Install autopep8
 
-TODO: Must install `autopep8` for python mode
+`pip install autopep8` or `conda install autopep8`
 
-### Included Customization
+#### Get Source
 
-Coming Soon
+1. `cd ~`
+2. `git clone git@github.com:kpurdon/kp-emacs.git .emacs.d`
+
+#### Start Emacs
+
+When you start emacs all of the required packages will be installed and settings applied.
+
+### Included Configuration
+
+* Python
+* Ruby
+* Puppet
+* Markdown
+* Dockerfile
+* YAML
+* Web (HTML/JS/CSS)
+* SASS
 
 ### License
 
