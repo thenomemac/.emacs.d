@@ -21,6 +21,8 @@
     elpy
     flycheck
     flycheck-color-mode-line
+    go-mode
+    go-autocomplete
     jekyll-modes
     magit
     markdown-mode

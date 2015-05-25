@@ -13,6 +13,7 @@
 (require 'kp-dev-docker)
 (require 'kp-dev-ruby)
 (require 'kp-dev-jekyll)
+(require 'kp-dev-go)
 
 (provide 'kp-dev)
 
