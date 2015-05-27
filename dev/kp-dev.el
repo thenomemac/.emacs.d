@@ -14,6 +14,7 @@
 (require 'kp-dev-ruby)
 (require 'kp-dev-jekyll)
 (require 'kp-dev-go)
+(require 'kp-dev-mapserver)
 
 (provide 'kp-dev)
 
