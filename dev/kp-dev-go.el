@@ -19,6 +19,8 @@
                           (set (make-local-variable 'company-backends) '(company-go))
                           (company-mode)))
 
+(setq compile-command "go generate && go build -v && go test -v && go vet")
+
 (require 'go-mode)
 
 (provide 'kp-dev-go)
