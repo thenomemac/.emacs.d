@@ -9,6 +9,10 @@ Emacs configuration for [Emacs for MacOSX](http://emacsformacosx.com/)
 
 `pip install autopep8` or `conda install autopep8`
 
+#### Install gocode (go autocompletion)
+
+`go get -u github.com/nsf/gocode`
+
 #### Get Source
 
 1. `cd ~`

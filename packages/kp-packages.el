@@ -22,7 +22,7 @@
     flycheck
     flycheck-color-mode-line
     go-mode
-    go-autocomplete
+    company-go
     jekyll-modes
     magit
     markdown-mode

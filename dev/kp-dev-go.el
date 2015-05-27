@@ -13,8 +13,13 @@
 (add-to-list 'exec-path "/Users/kpurdon/projects/gocode/bin")
 (add-hook 'before-save-hook 'gofmt-before-save)
 
+;; autocompletion with company-mode
+(add-hook 'go-mode-hook 'company-mode)
+(add-hook 'go-mode-hook (lambda ()
+                          (set (make-local-variable 'company-backends) '(company-go))
+                          (company-mode)))
+
 (require 'go-mode)
-;; (require 'go-autocomplete)
 
 (provide 'kp-dev-go)
 
