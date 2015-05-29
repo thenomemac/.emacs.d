@@ -30,6 +30,7 @@
     pbcopy
     puppet-mode
     py-autopep8
+    rubocop
     sass-mode
     web-mode
     yaml-mode))

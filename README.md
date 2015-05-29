@@ -13,6 +13,10 @@ Emacs configuration for [Emacs for MacOSX](http://emacsformacosx.com/)
 
 `go get -u github.com/nsf/gocode`
 
+#### Install rubocop (ruby linter)
+
+`gem install rubocop`
+
 #### Get Source
 
 1. `cd ~`
