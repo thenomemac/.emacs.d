@@ -26,6 +26,7 @@
     jekyll-modes
     magit
     markdown-mode
+    multiple-cursors
     neotree
     pbcopy
     puppet-mode
