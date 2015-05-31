@@ -5,22 +5,24 @@ Emacs configuration for [Emacs for MacOSX](http://emacsformacosx.com/)
 
 ### Quickstart
 
-#### Install autopep8
+#### Install Python Dependencies
 
-`pip install autopep8` or `conda install autopep8`
+* `pip install autopep8` or `conda install autopep8`
+* `pip install jedi` or `conda install jedi`
 
-#### Install gocode (go autocompletion)
+#### Install Golang Dependencies
 
-`go get -u github.com/nsf/gocode`
+* `go get -u github.com/nsf/gocode`
 
-#### Install rubocop (ruby linter)
+#### Install Ruby Dependencies
 
-`gem install rubocop`
+* `gem install rubocop`
 
 #### Get Source
 
 1. `cd ~`
-2. `git clone git@github.com:kpurdon/kp-emacs.git .emacs.d`
+2. `rm -rf .emacs.d`
+3. `git clone git@github.com:kpurdon/kp-emacs.git .emacs.d`
 
 #### Start Emacs
 
@@ -37,6 +39,7 @@ When you start emacs all of the required packages will be installed and settings
 * Web (HTML/JS/CSS)
 * SASS
 * Jekyll Blog (Polymode Support)
+* Golang
 
 ### License
 

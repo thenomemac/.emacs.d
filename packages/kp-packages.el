@@ -43,4 +43,4 @@
 
 (provide 'kp-packages)
 
-;;; kwp-packages.el ends here
+;;; kp-packages.el ends here

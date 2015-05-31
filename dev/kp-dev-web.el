@@ -1,4 +1,4 @@
-;;; kp-dev-web --- web configuration for kwp-emacs
+;;; kp-dev-web --- web configuration
 
 ;;; Code:
 
