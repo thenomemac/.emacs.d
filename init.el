@@ -25,6 +25,11 @@
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 (require 'pbcopy)
 (turn-on-pbcopy)
 
