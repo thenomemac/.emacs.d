@@ -18,6 +18,8 @@
                              (electric-pair-mode)
                              (flycheck-mode)))
 
+(add-hook 'before-save-hook 'rubocop-autocorrect-current-file nil t)
+
 (provide 'kp-dev-ruby)
 
 ;;; kp-dev-ruby.el ends here
