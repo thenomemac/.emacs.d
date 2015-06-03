@@ -33,6 +33,7 @@
     py-autopep8
     rubocop
     sass-mode
+    sql-indent
     web-mode
     yaml-mode))
 
