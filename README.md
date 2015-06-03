@@ -40,6 +40,8 @@ When you start emacs all of the required packages will be installed and settings
 * SASS
 * Jekyll Blog (Polymode Support)
 * Golang
+* NginX Config
+* SQL (w/ indentation)
 
 ### License
 
