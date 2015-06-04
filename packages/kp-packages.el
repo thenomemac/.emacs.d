@@ -19,8 +19,11 @@
     dockerfile-mode
     ein
     elpy
+    exec-path-from-shell
     flycheck
     flycheck-color-mode-line
+    flymake-cursor
+    flymake-jslint
     go-mode
     company-go
     jekyll-modes

@@ -23,6 +23,10 @@
 (require 'kp-kbd)
 (require 'kp-dev)
 
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 (setq backup-directory-alist

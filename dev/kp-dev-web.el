@@ -22,6 +22,9 @@
 ;;        ad-do-it)
 ;;    ad-do-it))
 
+(require 'flymake-jslint)
+(add-hook 'web-mode-hook 'flymake-jslint-load)
+
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)

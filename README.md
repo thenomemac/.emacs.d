@@ -18,6 +18,10 @@ Emacs configuration for [Emacs for MacOSX](http://emacsformacosx.com/)
 
 * `gem install rubocop`
 
+#### Install JS Dependencies
+
+* `npm install -g jslint`
+
 #### Get Source
 
 1. `cd ~`
