@@ -14,7 +14,8 @@
   (package-refresh-contents))
 
 (defvar myPackages
-  '(ample-theme
+  '(ac-js2
+    ample-theme
     better-defaults
     dockerfile-mode
     ein
@@ -22,11 +23,10 @@
     exec-path-from-shell
     flycheck
     flycheck-color-mode-line
-    flymake-cursor
-    flymake-jslint
     go-mode
     company-go
     jekyll-modes
+    js2-mode
     magit
     markdown-mode
     multiple-cursors

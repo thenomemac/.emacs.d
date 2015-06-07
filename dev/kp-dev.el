@@ -17,6 +17,7 @@
 (require 'kp-dev-mapserver)
 (require 'kp-dev-sql)
 (require 'kp-dev-nginx)
+(require 'kp-dev-js)
 
 (provide 'kp-dev)
 

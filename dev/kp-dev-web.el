@@ -9,9 +9,6 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-
 (setq web-mode-engines-alist '(("django"    . "\\.html\\'")))
 
 ;; jsx specific configuration
@@ -21,9 +18,6 @@
 ;;      (let ((web-mode-enable-part-face nil))
 ;;        ad-do-it)
 ;;    ad-do-it))
-
-(require 'flymake-jslint)
-(add-hook 'web-mode-hook 'flymake-jslint-load)
 
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
