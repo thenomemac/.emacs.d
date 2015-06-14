@@ -15,7 +15,6 @@
 
 (defvar myPackages
   '(ac-js2
-    ample-theme
     better-defaults
     dockerfile-mode
     ein
@@ -29,6 +28,7 @@
     js2-mode
     magit
     markdown-mode
+    material-theme
     multiple-cursors
     neotree
     pbcopy

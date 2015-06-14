@@ -4,8 +4,7 @@
 
 (setq inhibit-startup-message t)
 
-(load-theme `ample t)
-(enable-theme `ample)
+(load-theme `material t)
 
 (global-linum-mode t)
 (setq linum-format "%4d \u2502 ")
