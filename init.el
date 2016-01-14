@@ -1,42 +1,32 @@
-;;; init --- configuration initialization
-;;; Commentary:
+;; init -- emacs configuration
 
-;; Thanks to Kevin Beam and Matt Savoie for starting me
-;; on my emacs journey. Without there encouragment,
-;; hand-me-down configurations and help along the way
-;; I would not be a part of the wonderful emacs community!
-;;
-;; Kevin Beam:  https://github.com/kwbeam/kwb-emacs
-;; Matt Savoie: https://github.com/flamingbear/emacs-config
-;;
-;; This configuration has grown from the two above.
-
-;;; Code:
-
+;; add configuration sub-directories
 (let ((default-directory "~/.emacs.d/"))
   (normal-top-level-add-subdirs-to-load-path))
 
-(setq default-directory "~/projects/" )
+;; set the default (start) directory
+(if (string= "" (getenv "EMACS_HOME"))
+    (defvar emacs_home (getenv "EMACS_HOME")) (defvar emacs_home "~/"))
+(setq default-directory emacs_home)
 
-(require 'kp-packages)
-(require 'kp-ui)
-(require 'kp-kbd)
-(require 'kp-dev)
+;; load all other configuration
+(require 'packages)
+(require 'keybindings)
+(require 'development)
 
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))
+;; enable the cyberpunk theme
+(load-theme 'cyberpunk t)
 
-(setq magit-last-seen-setup-instructions "1.4.0")
+;; disable the default startup message
+(setq inhibit-startup-message t)
 
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+;; enable global line numbers
+(global-linum-mode t)
+(setq linum-format "%4d \u2502 ")
 
-(require 'multiple-cursors)
+;; simplify prompts (only yes or no)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
+;; enable system clipboard
 (require 'pbcopy)
 (turn-on-pbcopy)
-
-;;; init.el ends here

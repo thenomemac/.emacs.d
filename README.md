@@ -1,52 +1,27 @@
 ## kp-emacs
 ---
 
-Emacs configuration for [Emacs for MacOSX](http://emacsformacosx.com/)
+My personal emacs configuration. This configuration is built to work with [Emacs for MacOSX](http://emacsformacosx.com/) and is last tested on:
 
-### Quickstart
+```
+$ emacs --version
+GNU Emacs 24.4.1
+```
 
-#### Install Python Dependencies
-
-* `pip install autopep8` or `conda install autopep8`
-* `pip install jedi` or `conda install jedi`
-
-#### Install Golang Dependencies
-
-* `go get -u github.com/nsf/gocode`
-
-#### Install Ruby Dependencies
-
-* `gem install rubocop`
-
-#### Install JS Dependencies
-
-* `npm install -g jslint`
-
-#### Get Source
-
-1. `cd ~`
-2. `rm -rf .emacs.d`
-3. `git clone git@github.com:kpurdon/kp-emacs.git .emacs.d`
-
-#### Start Emacs
-
-When you start emacs all of the required packages will be installed and settings applied.
-
-### Included Configuration
+Custom configuration is included for the following "languages":
 
 * Python
-* Ruby
-* Puppet
-* Markdown
-* Dockerfile
-* YAML
-* Web (HTML/JS/CSS)
-* SASS
-* Jekyll Blog (Polymode Support)
 * Golang
-* NginX Config
-* SQL (w/ indentation)
+* Markdown
+* Web (HTML/JavaScript/CSS)
 
-### License
+### Dependency Quickstart
 
-GPLv3 - See LICENSE
+#### Python
+
+* `pip install autopep8`
+* `pip install jedi`
+
+#### Golang
+
+* `go get -u github.com/nsf/gocode`
