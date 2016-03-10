@@ -5,8 +5,7 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 ;; set the default (start) directory
-(if (string= "" (getenv "EMACS_HOME"))
-    (defvar emacs_home (getenv "EMACS_HOME")) (defvar emacs_home "~/"))
+(defvar emacs_home (getenv "EMACS_HOME"))
 (setq default-directory emacs_home)
 
 ;; load all other configuration

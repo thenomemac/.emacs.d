@@ -14,6 +14,7 @@
   '(better-defaults
     cyberpunk-theme
     elpy
+    exec-path-from-shell
     flycheck
     go-autocomplete
     go-mode
