@@ -3,6 +3,12 @@
 ;; enable go-mode (go configuration for emacs)
 (require 'go-mode)
 
+;; enable autocompletion
+(defun auto-complete-for-go ()
+  (auto-complete-mode 1))
+(add-hook 'go-mode-hook 'auto-complete-for-go)
+(with-eval-after-load 'go-mode (require 'go-autocomplete))
+
 ;; enable rainbow-delimiters
 (require 'rainbow-delimiters)
 (add-hook `go-mode-hook `rainbow-delimiters-mode)

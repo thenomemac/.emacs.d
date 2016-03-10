@@ -15,8 +15,9 @@
     cyberpunk-theme
     elpy
     flycheck
-    js2-mode
+    go-autocomplete
     go-mode
+    js2-mode
     magit
     markdown-mode
     pbcopy
