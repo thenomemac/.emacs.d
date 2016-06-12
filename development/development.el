@@ -8,6 +8,7 @@
 (require '_markdown)
 (require '_javascript)
 (require '_web)
+(require '_json)
 
 (provide 'development)
 
