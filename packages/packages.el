@@ -4,7 +4,7 @@
 
 ;; add the melpa package repo
 (add-to-list 'package-archives
-	     '("melpa" . "http://melpa.org/packages/") t)
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 (package-initialize)
 (when (not package-archive-contents)
@@ -19,12 +19,15 @@
     go-autocomplete
     go-mode
     js2-mode
+    json-mode
     magit
     markdown-mode
-    pbcopy
+    nginx-mode
     py-autopep8
     rainbow-delimiters
-    web-mode))
+    smart-mode-line
+    web-mode
+    yaml-mode))
 
 (mapc #'(lambda (package)
 	  (unless (package-installed-p package)
