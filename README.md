@@ -17,7 +17,7 @@ Custom configuration is included for the following "languages":
 
 ### Dependency Quickstart
 
-### Home Directory
+#### Home Directory
 
 Set the environment variable `EMACS_HOME` to whatever directory you want `find-file` to start in.
 
