@@ -29,3 +29,13 @@ Set the environment variable `EMACS_HOME` to whatever directory you want `find-f
 #### Golang
 
 * `go get -u github.com/nsf/gocode`
+
+#### Slack
+
+Set the following environment variables (follow instructions [here](https://github.com/yuya373/emacs-slack)) to get the required values:
+
+* `EMACS_SLACK_<TEAM>_CLIENT_ID`
+* `EMACS_SLACK_<TEAM>_CLIENT_SECRET`
+* `EMACS_SLACK_<TEAM>_TOKEN`
+
+Note: You'll have to do this for each team you want to connect to.

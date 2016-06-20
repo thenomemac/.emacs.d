@@ -43,10 +43,23 @@
 ;; enable and configure smart-mode-line
 (setq sml/no-confirm-load-theme t)
 (sml/setup)
-(add-to-list 'sml/replacer-regexp-list '("^/bitly/src/github.com/bitly/bitly" ":bitly:") t)
+(add-to-list 'sml/replacer-regexp-list
+             '("^/bitly/src/github.com/bitly/bitly" ":bitly:") t)
 
 ;; put all backup files in the system temp directory
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+
+;; configure slack
+(require 'alert)
+(require 'slack)
+(setq slack-buffer-emoji t)
+(setq slack-prefer-current-team t)
+(slack-register-team
+ :name "bitly"
+ :default t
+ :client-id (getenv "EMACS_SLACK_BITLY_CLIENT_ID")
+ :client-secret (getenv "EMACS_SLACK_BITLY_CLIENT_SECRET")
+ :token (getenv "EMACS_SLACK_BITLY_TOKEN"))
