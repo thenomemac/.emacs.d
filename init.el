@@ -45,6 +45,14 @@
 (sml/setup)
 (add-to-list 'sml/replacer-regexp-list
              '("^/bitly/src/github.com/bitly/bitly" ":bitly:") t)
+(add-to-list 'sml/replacer-regexp-list
+             '("^:bitly:/v3_api" ":v3:") t)
+(add-to-list 'sml/replacer-regexp-list
+             '("^:bitly:/v4_api" ":v4:") t)
+(add-to-list 'sml/replacer-regexp-list
+             '("^:bitly:/user_management" ":um:") t)
+(add-to-list 'sml/replacer-regexp-list
+             '("^:um:/user_management_api" ":umapi:") t)
 
 ;; put all backup files in the system temp directory
 (setq backup-directory-alist
