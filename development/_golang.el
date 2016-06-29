@@ -18,6 +18,9 @@
 (setq gofmt-command "goimports")
 (add-hook 'before-save-hook 'gofmt-before-save)
 
+;; enable on-the-fly syntax checking using flycheck
+(add-hook `go-mode-hook `flycheck-mode)
+
 (provide '_golang)
 
 ;; _golang ends here

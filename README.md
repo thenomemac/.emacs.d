@@ -29,6 +29,7 @@ Set the environment variable `EMACS_HOME` to whatever directory you want `find-f
 #### Golang
 
 * `go get -u github.com/nsf/gocode`
+* `go get -u github.com/golang/lint/golint` (requires go 1.5+)
 
 #### Slack
 
