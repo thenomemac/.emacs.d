@@ -4,11 +4,14 @@
 (require 'go-mode)
 
 ;; enable autocompletion
-(require 'auto-complete)
-(defun auto-complete-for-go ()
-  (auto-complete-mode 1))
-(add-hook 'go-mode-hook 'auto-complete-for-go)
-(with-eval-after-load 'go-mode (require 'go-autocomplete))
+;; (require 'auto-complete)
+;; (defun auto-complete-for-go ()
+;;   (auto-complete-mode 1))
+;; (add-hook 'go-mode-hook 'auto-complete-for-go)
+
+(require 'go-autocomplete)
+(require 'auto-complete-config)
+(ac-config-default)
 
 ;; enable rainbow-delimiters
 (require 'rainbow-delimiters)
