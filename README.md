@@ -29,9 +29,10 @@ Set the environment variable `EMACS_HOME` to whatever directory you want `find-f
 #### Golang
 
 * `go get -u github.com/nsf/gocode`
-* `go get -u github.com/golang/lint/golint` (requires go 1.5+)
+* (optional) `go get -u github.com/golang/lint/golint` (requires go 1.5+)
+* (optional) `go get -u golang.org/x/tools/cmd/guru`
 
-#### Slack
+#### Slack (optional)
 
 Set the following environment variables (follow instructions [here](https://github.com/yuya373/emacs-slack)) to get the required values:
 

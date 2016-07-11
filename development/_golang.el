@@ -21,6 +21,11 @@
 ;; enable on-the-fly syntax checking using flycheck
 (add-hook `go-mode-hook `flycheck-mode)
 
+;; enable guru support
+(require 'go-guru)
+(add-hook `go-mode-hook `go-guru-hl-identifier-mode)
+(set-face-attribute 'highlight nil :background "#FF0" :foreground "#000")
+
 (provide '_golang)
 
 ;; _golang ends here

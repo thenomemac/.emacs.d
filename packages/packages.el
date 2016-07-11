@@ -17,6 +17,7 @@
     exec-path-from-shell
     flycheck
     go-autocomplete
+    go-guru
     go-mode
     js2-mode
     json-mode

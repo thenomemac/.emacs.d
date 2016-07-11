@@ -53,6 +53,8 @@
              '("^:bitly:/user_management" ":um:") t)
 (add-to-list 'sml/replacer-regexp-list
              '("^:um:/user_management_api" ":umapi:") t)
+(add-to-list 'sml/replacer-regexp-list
+             '("^~/projects/gocode" ":go:") t)
 
 ;; put all backup files in the system temp directory
 (setq backup-directory-alist
