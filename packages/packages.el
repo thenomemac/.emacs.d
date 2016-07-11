@@ -26,7 +26,6 @@
     nginx-mode
     py-autopep8
     rainbow-delimiters
-    slack
     smart-mode-line
     web-mode
     yaml-mode))

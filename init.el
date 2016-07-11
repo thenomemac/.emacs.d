@@ -61,15 +61,3 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
-
-;; configure slack
-(require 'alert)
-(require 'slack)
-(setq slack-buffer-emoji t)
-(setq slack-prefer-current-team t)
-(slack-register-team
- :name "bitly"
- :default t
- :client-id (getenv "EMACS_SLACK_BITLY_CLIENT_ID")
- :client-secret (getenv "EMACS_SLACK_BITLY_CLIENT_SECRET")
- :token (getenv "EMACS_SLACK_BITLY_TOKEN"))
