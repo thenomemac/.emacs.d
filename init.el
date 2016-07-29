@@ -61,3 +61,6 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+
+;; disable magit auto revert
+(magit-auto-revert-mode 0)
