@@ -28,7 +28,8 @@
     rainbow-delimiters
     smart-mode-line
     web-mode
-    yaml-mode))
+    yaml-mode
+    yasnippet))
 
 (mapc #'(lambda (package)
 	  (unless (package-installed-p package)
