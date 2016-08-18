@@ -5,7 +5,7 @@ My personal emacs configuration. This configuration is built to work with [Emacs
 
 ```
 $ emacs --version
-GNU Emacs 24.4.1
+GNU Emacs 25.1.1
 ```
 
 Custom configuration is included for the following "languages":
