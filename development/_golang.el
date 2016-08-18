@@ -3,11 +3,9 @@
 ;; enable go-mode (go configuration for emacs)
 (require 'go-mode)
 
-;; enable autocompletion
-;; (require 'auto-complete)
-;; (defun auto-complete-for-go ()
-;;   (auto-complete-mode 1))
-;; (add-hook 'go-mode-hook 'auto-complete-for-go)
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-env "GOPATH"))
 
 (require 'go-autocomplete)
 (require 'auto-complete-config)
