@@ -66,6 +66,9 @@
 ;; disable magit auto revert
 (magit-auto-revert-mode 0)
 
+;; show the magic status buffer in the full-frame
+(setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
+
 ;; enable yasnippet globally
 ;; (add-to-list 'load-path "~/.emacs.d/snippets")
 (require 'yasnippet)
