@@ -12,6 +12,7 @@
 
 (defvar _packages
   '(better-defaults
+    browse-at-remote
     cyberpunk-theme
     elpy
     exec-path-from-shell

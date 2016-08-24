@@ -73,3 +73,6 @@
 ;; (add-to-list 'load-path "~/.emacs.d/snippets")
 (require 'yasnippet)
 (yas-global-mode 1)
+
+;; enable browse at remote (open github/bitbucket/... from region)
+(require 'browse-at-remote)
