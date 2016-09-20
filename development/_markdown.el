@@ -17,4 +17,4 @@
 
 (provide '_markdown)
 
-;; markdown.el ends here
+;; _markdown.el ends here

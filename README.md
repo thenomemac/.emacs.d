@@ -18,6 +18,8 @@ Custom configuration is included for the following development modes:
     * Optional autopep8 support
 * Markdown
     * Live Preview `M-x m-pr-m` (via markdown-preview-mode)
+* JSON
+    * via [json-mode](https://github.com/joshwnj/json-mode)
 
 ### Quickstart
 

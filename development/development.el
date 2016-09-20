@@ -20,6 +20,9 @@
 (use-package _markdown
   :ensure f)
 
+(use-package _json
+  :ensure f)
+
 (provide 'development)
 
 ;; development.el ends here
