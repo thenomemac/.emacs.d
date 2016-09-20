@@ -1,30 +1,32 @@
-;; _python -- custom python configuration
+;; _python.el -- custom python configuration
 
-;; enable elpy (emacs lisp python)
-(elpy-enable)
+;; Author: Kyle W. Purdon (kpurdon)
+;; URL: https://github.com/kpurdon/kp-emacs/development/_python.el
+;;
+;; This file is not part of GNU Emacs.
 
-;; enable rainbow-delimiters
-(require 'rainbow-delimiters)
-(add-hook `python-mode-hook `rainbow-delimiters-mode)
+;; Code:
 
-;; use flycheck not flymake
-(when (require 'flycheck nil t)
+(use-package elpy
+  :init (with-eval-after-load 'python (elpy-enable))
+  :config
+  ;; use flycheck instead of flymake
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-  (add-hook 'elpy-mode-hook 'flycheck-mode))
+  (add-hook 'elpy-mode-hook 'flycheck-mode)
 
-;; enable autopep8 formatting on save
-;; ignoring:
-;; - E501 - Try to make lines fit within --max-line-length characters.
-;; - W293 - Remove trailing whitespace on blank line.
-;; - W391 - Remove trailing blank lines.
-;; - W690 - Fix various deprecated code (via lib2to3).
-(require 'py-autopep8)
-(setq py-autopep8-options '("--ignore=E501,W293,W391,W690"))
-(add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+  ;; enable autopep8 on save
+  ;; Ignoring:
+  ;;  - E501: line too long
+  ;;  - W293: trailing whitespace
+  ;;  - W391: blank line at EOF
+  ;;  - W690: fix deprecated code
+  (use-package py-autopep8
+    :config
+    (setq py-autopep8-options '("--ignore=E501,W293,W391,W690"))
+    (add-hook 'python-mode-hook 'py-autopep8-enable-on-save))
 
-;; enable newline-and-indent on return
-(define-key global-map (kbd "RET") 'newline-and-indent)
+  :bind ("RET" . newline-and-indent))
 
 (provide '_python)
 
-;; _python ends here
+;; _python.el ends here

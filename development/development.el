@@ -1,15 +1,34 @@
-;; development -- load development modes
+;; development.el - Load All Development Configuration
 
-;; delete trailing white space always
+;; Author: Kyle W. Purdon (kpurdon)
+;; URL: https://github.com/kpurdon/kp-emacs/development/development.el
+;;
+;; This file is not part of GNU Emacs.
+
+;; Code:
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(require '_python)
-(require '_golang)
-(require '_markdown)
-(require '_javascript)
-(require '_web)
-(require '_json)
+(use-package flycheck)
+
+(use-package _golang
+  :ensure f)
+
+(use-package _python
+  :ensure f)
+
+(use-package _markdown
+  :ensure f)
+
+(use-package _json
+  :ensure f)
+
+(use-package _web
+  :ensure f)
+
+(use-package _javascript
+  :ensure f)
 
 (provide 'development)
 
-;; development ends here
+;; development.el ends here

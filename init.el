@@ -1,78 +1,89 @@
-;; init -- emacs configuration
+;; init.el - Custom Emacs Configuration
+
+;; Author: Kyle W. Purdon (kpurdon)
+;; Version: 5.0.0
+;; Keywords: configuration emacs
+;; URL: https://github.com/kpurdon/kp-emacs/init.el
+;;
+;; This file is not part of GNU Emacs.
+
+;; Code:
 
 (package-initialize)
 
 (let ((default-directory "~/.emacs.d/"))
   (normal-top-level-add-subdirs-to-load-path))
 
-;; set the default (start) directory
-(defvar emacs_home (getenv "EMACS_HOME"))
-(setq default-directory emacs_home)
+(require 'pkg-bootstrap)
 
-;; load all other configuration
-(require 'packages)
-(require 'keybindings)
-(require 'development)
+(use-package osx-copy-paste
+  :ensure f
+  :load-path "osx-copy-paste/")
 
-;; enable the cyberpunk theme
-(load-theme 'cyberpunk t)
+(use-package exec-path-from-shell
+  :config
+  (when (memq window-system '(mac ns))
+    (exec-path-from-shell-initialize)))
 
-;; disable the default startup message
+(use-package better-defaults
+  :config
+  ;; backups: use system tmp dir instead of user emacs dir
+  (setq backup-directory-alist
+        `((".*" . ,temporary-file-directory)))
+  (setq auto-save-file-name-transforms
+        `((".*" ,temporary-file-directory t))))
+
 (setq inhibit-startup-message t)
 
-;; enable global line numbers
 (global-linum-mode t)
 (setq linum-format "%4d \u2502 ")
 
-;; simplify prompts (only yes or no)
-(defalias 'yes-or-no-p 'y-or-n-p)
+(windmove-default-keybindings)
 
-;; enable system clipboard
-;; http://emacs.stackexchange.com/questions/10900/copy-text-from-emacs-to-os-x-clipboard
-(defun copy-from-osx ()
-  (shell-command-to-string "pbpaste"))
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)
 
-(defun paste-to-osx (text &optional push)
-  (let ((process-connection-type nil))
-    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-      (process-send-string proc text)
-      (process-send-eof proc))))
+(use-package cyberpunk-theme
+             :config
+             (load-theme 'cyberpunk t))
 
-(setq interprogram-cut-function 'paste-to-osx)
-(setq interprogram-paste-function 'copy-from-osx)
+(use-package magit
+             :bind ("C-c g" . magit-status)
+             :config
+             ;; disable auto-revert-mode (a bit faster w/o)
+             (magit-auto-revert-mode 0)
+             ;; display the magit in a full screen buffer
+             (setq magit-display-buffer-function
+                   'magit-display-buffer-fullframe-status-v1))
 
-;; enable and configure smart-mode-line
-(setq sml/no-confirm-load-theme t)
-(sml/setup)
-(add-to-list 'sml/replacer-regexp-list
-             '("^/bitly/src/github.com/bitly/bitly" ":bitly:") t)
-(add-to-list 'sml/replacer-regexp-list
-             '("^:bitly:/v3_api" ":v3:") t)
-(add-to-list 'sml/replacer-regexp-list
-             '("^:bitly:/v4_api" ":v4:") t)
-(add-to-list 'sml/replacer-regexp-list
-             '("^:bitly:/user_management" ":um:") t)
-(add-to-list 'sml/replacer-regexp-list
-             '("^:um:/user_management_api" ":umapi:") t)
-(add-to-list 'sml/replacer-regexp-list
-             '("^~/projects/gocode" ":go:") t)
+;; smart-mode-line replaces defined paths with shorthands
+;; e.g ~/projects/gocode becomes :go:
+(use-package smart-mode-line
+             :init
+             (setq sml/no-confirm-load-theme t)
+             :config
+             (sml/setup)
+             (add-to-list 'sml/replacer-regexp-list '("^~/projects/gocode" ":go:") t))
 
-;; put all backup files in the system temp directory
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+(use-package yasnippet
+             :config
+             (yas-global-mode 1))
 
-;; disable magit auto revert
-(magit-auto-revert-mode 0)
+(use-package development
+  :ensure f
+  :load-path "development/")
 
-;; show the magic status buffer in the full-frame
-(setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
+;; init.el ends here
 
-;; enable yasnippet globally
-;; (add-to-list 'load-path "~/.emacs.d/snippets")
-(require 'yasnippet)
-(yas-global-mode 1)
-
-;; enable browse at remote (open github/bitbucket/... from region)
-(require 'browse-at-remote)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (markdown-preview-mode use-package))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

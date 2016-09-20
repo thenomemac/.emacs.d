@@ -1,32 +1,40 @@
-;; _golang -- custom golang configuration
+;; _golang.el -- custom golang configuration
 
-;; enable go-mode (go configuration for emacs)
-(require 'go-mode)
+;; Author: Kyle W. Purdon (kpurdon)
+;; URL: https://github.com/kpurdon/kp-emacs/development/_golang.el
+;;
+;; This file is not part of GNU Emacs.
 
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize)
-  (exec-path-from-shell-copy-env "GOPATH"))
+;; Code:
 
-(require 'go-autocomplete)
-(require 'auto-complete-config)
-(ac-config-default)
+(use-package go-mode
+  :config
+  (exec-path-from-shell-copy-env "GOPATH")
 
-;; enable rainbow-delimiters
-(require 'rainbow-delimiters)
-(add-hook `go-mode-hook `rainbow-delimiters-mode)
+  (use-package auto-complete
+    :config
+    (use-package go-autocomplete)
+    (ac-config-default))
 
-;; run gofmt on save (really goimports which calls gofmt)
-(setq gofmt-command "goimports")
-(add-hook 'before-save-hook 'gofmt-before-save)
+  (setq gofmt-command "goimports")
+  (add-hook 'before-save-hook 'gofmt-before-save)
 
-;; enable on-the-fly syntax checking using flycheck
-(add-hook `go-mode-hook `flycheck-mode)
+  (add-hook `go-mode-hook `flycheck-mode)
 
-;; enable guru support
-(require 'go-guru)
-(add-hook `go-mode-hook `go-guru-hl-identifier-mode)
-(set-face-attribute 'highlight nil :background "#FF0" :foreground "#000")
+  (use-package go-guru
+    :config
+    (add-hook `go-mode-hook `go-guru-hl-identifier-mode)
+    (set-face-attribute 'highlight nil :background "#FF0" :foreground "#000"))
+
+  (use-package go-add-tags
+    :bind (("C-c t" . go-add-tags)))
+
+  (use-package go-eldoc
+    :config
+    (add-hook 'go-mode-hook 'go-eldoc-setup)))
+
+
 
 (provide '_golang)
 
-;; _golang ends here
+;; _golang.el ends here
