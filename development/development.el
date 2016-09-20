@@ -12,8 +12,10 @@
 (use-package flycheck)
 
 (use-package _golang
-  :ensure f
-  :diminish go-mode)
+  :ensure f)
+
+(use-package _python
+  :ensure f)
 
 (provide 'development)
 
