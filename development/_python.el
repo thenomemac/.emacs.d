@@ -1,7 +1,7 @@
-;; _pythong.el -- custom python configuration
+;; _python.el -- custom python configuration
 
 ;; Author: Kyle W. Purdon (kpurdon)
-;; URL: https://github.com/kpurdon/kp-emacs/development/_golang.el
+;; URL: https://github.com/kpurdon/kp-emacs/development/_python.el
 ;;
 ;; This file is not part of GNU Emacs.
 

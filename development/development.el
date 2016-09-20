@@ -17,6 +17,9 @@
 (use-package _python
   :ensure f)
 
+(use-package _markdown
+  :ensure f)
+
 (provide 'development)
 
 ;; development.el ends here

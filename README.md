@@ -1,5 +1,4 @@
-## kp-emacs
----
+# kp-emacs
 
 My personal emacs configuration. This configuration is built to work with [Emacs for MacOSX](http://emacsformacosx.com/) and is last tested on:
 
@@ -11,9 +10,16 @@ GNU Emacs 25.1.1
 Custom configuration is included for the following development modes:
 
 * Golang
+    * Optional golint integration
+    * Optional guru (formerly oracle) integration
 * Python
+    * Optional autopep8 support
+* Markdown
+    * Live Preview `M-x m-pr-m` (via markdown-preview-mode)
 
-### Dependency Quickstart
+### Quickstart
+
+Install [Emacs for MacOSX](http://emacsformacosx.com/)
 
 #### Golang (see development/_golang.el)
 
@@ -25,5 +31,5 @@ Custom configuration is included for the following development modes:
 
 #### Python (see development/_python.el)
 
-* `pip install autopep8`
 * `pip install jedi`
+* (optional) `pip install autopep8`
