@@ -27,7 +27,13 @@
     (set-face-attribute 'highlight nil :background "#FF0" :foreground "#000"))
 
   (use-package go-add-tags
-    :bind (("C-c t" . go-add-tags))))
+    :bind (("C-c t" . go-add-tags)))
+
+  (use-package go-eldoc
+    :config
+    (add-hook 'go-mode-hook 'go-eldoc-setup)))
+
+
 
 (provide '_golang)
 

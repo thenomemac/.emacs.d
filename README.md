@@ -10,6 +10,8 @@ GNU Emacs 25.1.1
 Custom configuration is included for the following development modes:
 
 * Golang
+    * Automated struct tags (via [emacs-go-add-tags](https://github.com/syohex/emacs-go-add-tags))
+    * ElDoc support (via [emacs-go-eldoc](https://github.com/syohex/emacs-go-eldoc))
     * Optional golint integration
     * Optional guru (formerly oracle) integration
 * Python
