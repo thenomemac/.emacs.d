@@ -23,6 +23,12 @@
 (use-package _json
   :ensure f)
 
+(use-package _web
+  :ensure f)
+
+(use-package _javascript
+  :ensure f)
+
 (provide 'development)
 
 ;; development.el ends here
