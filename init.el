@@ -73,17 +73,8 @@
   :ensure f
   :load-path "development/")
 
-;; init.el ends here
+;; get the automated "customize" additions out of this file
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (markdown-preview-mode use-package))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; init.el ends here
