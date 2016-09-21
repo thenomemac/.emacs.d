@@ -77,4 +77,8 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
+;; set the default (start) directory
+(defvar emacs_home (getenv "EMACS_HOME"))
+(setq default-directory emacs_home)
+
 ;; init.el ends here
