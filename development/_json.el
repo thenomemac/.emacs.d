@@ -8,7 +8,7 @@
 ;; Code:
 
 (use-package json-mode
-  :mode "\\.json$")
+  :mode "\\.json\\'")
 
 (provide '_json)
 
