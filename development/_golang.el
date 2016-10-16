@@ -1,39 +1,32 @@
 ;; _golang.el -- custom golang configuration
 
 ;; Author: Kyle W. Purdon (kpurdon)
-;; URL: https://github.com/kpurdon/kp-emacs/development/_golang.el
 ;;
 ;; This file is not part of GNU Emacs.
 
 ;; Code:
 
-(use-package go-mode
-  :config
-  (exec-path-from-shell-copy-env "GOPATH")
+(require 'go-mode)
 
-  (use-package auto-complete
-    :config
-    (use-package go-autocomplete)
-    (ac-config-default))
+(exec-path-from-shell-copy-env "GOPATH")
 
-  (setq gofmt-command "goimports")
-  (add-hook 'before-save-hook 'gofmt-before-save)
+(require 'auto-complete)
+(require 'go-autocomplete)
+(ac-config-default)
 
-  (add-hook `go-mode-hook `flycheck-mode)
+(setq gofmt-command "goimports")
+(add-hook 'before-save-hook 'gofmt-before-save)
+(add-hook `go-mode-hook `flycheck-mode)
 
-  (use-package go-guru
-    :config
-    (add-hook `go-mode-hook `go-guru-hl-identifier-mode)
-    (set-face-attribute 'highlight nil :background "#FF0" :foreground "#000"))
+(require 'go-guru)
+(add-hook `go-mode-hook `go-guru-hl-identifier-mode)
+(set-face-attribute 'highlight nil :background "#FF0" :foreground "#000")
 
-  (use-package go-add-tags
-    :bind (("C-c t" . go-add-tags)))
+(require 'go-add-tags)
+(global-set-key (kbd "C-c t") 'go-add-tags)
 
-  (use-package go-eldoc
-    :config
-    (add-hook 'go-mode-hook 'go-eldoc-setup)))
-
-
+(require 'go-eldoc)
+(add-hook 'go-mode-hook 'go-eldoc-setup)
 
 (provide '_golang)
 

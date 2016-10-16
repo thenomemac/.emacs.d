@@ -27,7 +27,9 @@ Custom configuration is included for the following development modes:
 
 ### Quickstart
 
-Install [Emacs for MacOSX](http://emacsformacosx.com/)
+1. Install [Emacs for MacOSX](http://emacsformacosx.com/)
+2. Run `cd $HOME && rm -rf ./.emacs.d && git clone git@github.com:kpurdon/.emacs.d.git`
+3. Install the following dependencies:
 
 #### Golang (see development/_golang.el)
 
@@ -40,4 +42,5 @@ Install [Emacs for MacOSX](http://emacsformacosx.com/)
 #### Python (see development/_python.el)
 
 * `pip install jedi`
+* (optional) `pip install importmagic`
 * (optional) `pip install autopep8`

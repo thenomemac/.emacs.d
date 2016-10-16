@@ -1,33 +1,24 @@
 ;; development.el - Load All Development Configuration
 
 ;; Author: Kyle W. Purdon (kpurdon)
-;; URL: https://github.com/kpurdon/kp-emacs/development/development.el
 ;;
 ;; This file is not part of GNU Emacs.
 
 ;; Code:
 
+(require 'rainbow-delimiters)
+
+(global-flycheck-mode)
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
-(use-package flycheck)
-
-(use-package _golang
-  :ensure f)
-
-(use-package _python
-  :ensure f)
-
-(use-package _markdown
-  :ensure f)
-
-(use-package _json
-  :ensure f)
-
-(use-package _web
-  :ensure f)
-
-(use-package _javascript
-  :ensure f)
+(require '_python)
+(require '_golang)
+(require '_markdown)
+(require '_javascript)
+(require '_web)
+(require '_json)
 
 (provide 'development)
 

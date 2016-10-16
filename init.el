@@ -1,84 +1,59 @@
-;; init.el - Custom Emacs Configuration
+;;; init.el --- Custom Emacs Configuration
 
 ;; Author: Kyle W. Purdon (kpurdon)
-;; Version: 5.0.0
+;; Version: 6.0.0
 ;; Keywords: configuration emacs
-;; URL: https://github.com/kpurdon/kp-emacs/init.el
+;; URL: https://github.com/kpurdon/.emacs.d/init.el
 ;;
 ;; This file is not part of GNU Emacs.
 
-;; Code:
+;;; Commentary:
+
+;;; Code:
 
 (package-initialize)
 
 (let ((default-directory "~/.emacs.d/"))
   (normal-top-level-add-subdirs-to-load-path))
 
-(require 'pkg-bootstrap)
+(require 'install-packages)
+(require 'better-defaults)
 
-(use-package osx-copy-paste
-  :ensure f
-  :load-path "osx-copy-paste/")
-
-(use-package exec-path-from-shell
-  :config
-  (when (memq window-system '(mac ns))
-    (exec-path-from-shell-initialize)))
-
-(use-package better-defaults
-  :config
-  ;; backups: use system tmp dir instead of user emacs dir
-  (setq backup-directory-alist
-        `((".*" . ,temporary-file-directory)))
-  (setq auto-save-file-name-transforms
-        `((".*" ,temporary-file-directory t))))
-
-(setq inhibit-startup-message t)
+(setq osx-clipboard-mode t
+      inhibit-startup-message t
+      linum-format "%4d \u2502 "
+      backup-directory-alist `((".*" . ,temporary-file-directory))
+      auto-save-file-name-transforms `((".*" ,temporary-file-directory t))
+      inhibit-startup-message t
+      mac-command-modifier 'meta
+      mac-option-modifier nil
+      sml/no-confirm-load-theme t
+      yas-global-mode 1
+      custom-file "~/.emacs.d/custom.el"
+      magit-auto-revert-mode 0
+      magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
 
 (global-linum-mode t)
-(setq linum-format "%4d \u2502 ")
 
+(load-theme 'cyberpunk t)
 (windmove-default-keybindings)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier nil)
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 
-(use-package cyberpunk-theme
-             :config
-             (load-theme 'cyberpunk t))
+(require 'magit)
+(global-set-key (kbd "C-c g") 'magit-status)
 
-(use-package magit
-             :bind ("C-c g" . magit-status)
-             :config
-             ;; disable auto-revert-mode (a bit faster w/o)
-             (magit-auto-revert-mode 0)
-             ;; display the magit in a full screen buffer
-             (setq magit-display-buffer-function
-                   'magit-display-buffer-fullframe-status-v1))
+(sml/setup)
+(add-to-list 'sml/replacer-regexp-list
+             '("^~/projects/gocode" ":go:") t)
 
-;; smart-mode-line replaces defined paths with shorthands
-;; e.g ~/projects/gocode becomes :go:
-(use-package smart-mode-line
-             :init
-             (setq sml/no-confirm-load-theme t)
-             :config
-             (sml/setup)
-             (add-to-list 'sml/replacer-regexp-list '("^~/projects/gocode" ":go:") t))
+(require 'development)
 
-(use-package yasnippet
-             :config
-             (yas-global-mode 1))
-
-(use-package development
-  :ensure f
-  :load-path "development/")
-
-;; get the automated "customize" additions out of this file
-(setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
-;; set the default (start) directory
 (defvar emacs_home (getenv "EMACS_HOME"))
 (setq default-directory emacs_home)
 
-;; init.el ends here
+;;; init.el ends here
