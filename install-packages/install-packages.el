@@ -36,7 +36,9 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
 
-(package-refresh-contents)
+
+(when (not package-archive-contents)
+    (package-refresh-contents))
 (package-initialize)
 
 (dolist (p my-packages)
