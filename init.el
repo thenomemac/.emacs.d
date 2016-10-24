@@ -19,8 +19,7 @@
 (require 'install-packages)
 (require 'better-defaults)
 
-(setq osx-clipboard-mode t
-      inhibit-startup-message t
+(setq inhibit-startup-message t
       linum-format "%4d \u2502 "
       backup-directory-alist `((".*" . ,temporary-file-directory))
       auto-save-file-name-transforms `((".*" ,temporary-file-directory t))
@@ -32,6 +31,8 @@
       custom-file "~/.emacs.d/custom.el"
       magit-auto-revert-mode 0
       magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
+
+(osx-clipboard-mode +1)
 
 (global-linum-mode t)
 
