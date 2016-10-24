@@ -48,7 +48,7 @@
 
 (sml/setup)
 (add-to-list 'sml/replacer-regexp-list
-             '("^~/projects/gocode" ":go:") t)
+             '("^~/go" ":go:") t)
 
 (require 'development)
 
