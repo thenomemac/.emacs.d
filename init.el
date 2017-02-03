@@ -24,19 +24,19 @@
       backup-directory-alist `((".*" . ,temporary-file-directory))
       auto-save-file-name-transforms `((".*" ,temporary-file-directory t))
       inhibit-startup-message t
-      mac-command-modifier 'meta
-      mac-option-modifier nil
+      ;;mac-command-modifier 'meta
+      ;;mac-option-modifier nil
       sml/no-confirm-load-theme t
       yas-global-mode 1
-      custom-file "~/.emacs.d/custom.el"
+      ;;custom-file "~/.emacs.d/custom.el"
       magit-auto-revert-mode 0
       magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
 
-(osx-clipboard-mode +1)
+;;(osx-clipboard-mode +1)
 
 (global-linum-mode t)
 
-(load-theme 'cyberpunk t)
+(load-theme 'monokai t)
 (windmove-default-keybindings)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -52,9 +52,9 @@
 
 (require 'development)
 
-(load custom-file)
+;;(load custom-file)
 
-(defvar emacs_home (getenv "EMACS_HOME"))
-(setq default-directory emacs_home)
+;;(defvar emacs_home (getenv "EMACS_HOME"))
+;;(setq default-directory emacs_home)
 
 ;;; init.el ends here

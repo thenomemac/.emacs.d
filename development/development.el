@@ -15,7 +15,6 @@
 (add-hook 'prog-mode-hook 'subword-mode)
 
 (require '_python)
-(require '_golang)
 (require '_markdown)
 (require '_javascript)
 (require '_web)

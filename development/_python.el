@@ -7,6 +7,12 @@
 ;; Code:
 
 (elpy-enable)
+(elpy-use-ipython)
+
+(setq elpy-rpc-backend "jedi")
+
+(setq python-shell-interpreter "ipython"
+    python-shell-interpreter-args "--simple-prompt --pprint")
 
 (when (require 'flycheck nil t)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))

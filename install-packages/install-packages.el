@@ -1,6 +1,7 @@
-;;; install-packages.el --- Emacs Package Installation
+:q;;; install-packages.el --- Emacs Package Installation
 
 ;; Author: Kyle W. Purdon (kpurdon)
+;; Forked by: Josiah Olson (thenomemac)
 ;;
 ;; This file is not part of GNU Emacs.
 
@@ -13,14 +14,12 @@
 (defvar my-packages
   '(better-defaults
     cyberpunk-theme
+    material-theme
+    monokai-theme
     elpy
+    ein
     exec-path-from-shell
     flycheck
-    go-add-tags
-    go-autocomplete
-    go-eldoc
-    go-guru
-    go-mode
     js2-mode
     json-mode
     magit
@@ -31,7 +30,8 @@
     rainbow-delimiters
     smart-mode-line
     web-mode
-    yaml-mode))
+    yaml-mode
+    crosshairs))
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
