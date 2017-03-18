@@ -1,4 +1,7 @@
-# kpurdon/.emacs.d
+# thenomemac/.emacs.d
+## forked from: kpurdon/.emacs.d and others
+
+**Note: the info below this isn't correct and/or up-todate**
 
 My personal emacs configuration. This configuration is built to work with [Emacs for MacOSX](http://emacsformacosx.com/) and is last tested on:
 
