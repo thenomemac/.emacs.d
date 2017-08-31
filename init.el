@@ -33,8 +33,8 @@
 
 (defvar my-packages
   '(better-defaults
-    ;; cyberpunk-theme
-    ;; material-theme
+    cyberpunk-theme
+    material-theme
     monokai-theme
     elpy
     ein
@@ -51,7 +51,7 @@
     smart-mode-line
     web-mode
     yaml-mode
-    ;; crosshairs
+    crosshairs
     url
     ;; ess
     ;; slime
