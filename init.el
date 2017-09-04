@@ -50,7 +50,7 @@
     rainbow-delimiters
     smart-mode-line
     web-mode
-p    yaml-mode
+    yaml-mode
     crosshairs
     url
     ;; ess
