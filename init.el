@@ -119,6 +119,7 @@
 ;; echo -e '\n# Miniconda\nexport PATH="$HOME/miniconda3/bin:$PATH"' >> ~/.bashrc
 ;; conda install -y ipython jupyter numpy pandas scipy
 ;; pip install jedi rope flake8 importmagic autopep8 yapf
+;; mkdir -p ~/.config; echo -e '[flake8]\nmax-line-length = 120' >> ~/.config/flake8
 
 (setq elpy-rpc-backend "jedi")
 
@@ -135,9 +136,9 @@
 ;; - W293 - Remove trailing whitespace on blank line.xs
 ;; - W391 - Remove trailing blank lines.
 ;; - W690 - Fix various deprecated code (via lib2to3).
-;; (require 'py-autopep8)
-;; (setq py-autopep8-options '("--ignore=E501,W293,W391,W690"))
-;; (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+(require 'py-autopep8)
+(setq py-autopep8-options '("--ignore=E501,W690"))
+(add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
