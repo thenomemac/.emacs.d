@@ -56,6 +56,16 @@
     ;; ess
     ;; slime
     ;; ace-jump-mode
+    go-mode
+    go-guru
+    auto-complete
+    go-autocomplete
+    flymake-go
+    company
+    company-go
+    go-add-tags
+    go-eldoc
+    neotree
     avy
     key-chord
     multiple-cursors))
@@ -319,6 +329,111 @@ of escape sequences and list of keys."
   (setq deactivate-mark t))
 
 ;;; end custom functions
+
+
+
+;;; golang
+
+;; go dependencies
+;; go get -u golang.org/x/tools/cmd/...
+;; go get -u github.com/rogpeppe/godef/...
+;; go get -u github.com/nsf/gocode
+;; go get -u golang.org/x/tools/cmd/goimports
+;; go get -u golang.org/x/tools/cmd/guru
+;; go get -u github.com/dougm/goflymake
+
+;; Snag the user's PATH and GOPATH
+;; (when (memq window-system '(mac ns))
+;;   (exec-path-from-shell-initialize)
+;;   (exec-path-from-shell-copy-env "GOPATH"))
+;; 
+;; ;; Define function to call when go-mode loads
+;; (defun my-go-mode-hook ()
+;;   (add-hook 'before-save-hook 'gofmt-before-save) ; gofmt before every save
+;;   (setq gofmt-command "goimports")                ; gofmt uses invokes goimports
+;;   (if (not (string-match "go" compile-command))   ; set compile command default
+;;       (set (make-local-variable 'compile-command)
+;;            "go build -v && go test -v && go vet"))
+;; 
+;;   ;; guru settings
+;;   (go-guru-hl-identifier-mode)                    ; highlight identifiers
+;;   
+;;   ;; Key bindings specific to go-mode
+;;   (local-set-key (kbd "M-.") 'godef-jump)         ; Go to definition
+;;   (local-set-key (kbd "M-*") 'pop-tag-mark)       ; Return from whence you came
+;;   (local-set-key (kbd "M-p") 'compile)            ; Invoke compiler
+;;   (local-set-key (kbd "M-P") 'recompile)          ; Redo most recent compile cmd
+;;   (local-set-key (kbd "M-]") 'next-error)         ; Go to next error (or msg)
+;;   (local-set-key (kbd "M-[") 'previous-error)     ; Go to previous error or msg
+;; 
+;;   ;; Misc go stuff
+;;   (auto-complete-mode 1))                         ; Enable auto-complete mode
+;; 
+;; ;; Connect go-mode-hook with the function we just defined
+;; (add-hook 'go-mode-hook 'my-go-mode-hook)
+;; 
+;; ;; Ensure the go specific autocomplete is active in go-mode.
+;; (with-eval-after-load 'go-mode
+;;    (require 'go-autocomplete))
+;; 
+;; ;; If the go-guru.el file is in the load path, this will load it.
+;; (require 'go-guru)
+;; 
+;; ;; alternative go config
+
+(require 'go-mode)
+
+(exec-path-from-shell-copy-env "GOPATH")
+
+(require 'company)
+(require 'company-go)
+(add-hook 'go-mode-hook (lambda ()
+                          (set (make-local-variable 'company-backends) '(company-go))
+                          (company-mode)))
+
+(setq gofmt-command "goimports")
+(add-hook 'before-save-hook 'gofmt-before-save)
+(add-hook `go-mode-hook `flycheck-mode)
+
+(require 'go-guru)
+(add-hook `go-mode-hook `go-guru-hl-identifier-mode)
+(set-face-attribute 'highlight nil :background "#FF0" :foreground "#000")
+
+(require 'go-add-tags)
+(global-set-key (kbd "C-c t") 'go-add-tags)
+
+(require 'go-eldoc)
+(add-hook 'go-mode-hook 'go-eldoc-setup)
+
+(defun my-go-mode-hook ()
+  (add-hook 'before-save-hook 'gofmt-before-save) ; gofmt before every save
+  (setq gofmt-command "goimports")                ; gofmt uses invokes goimports
+  (if (not (string-match "go" compile-command))   ; set compile command default
+      (set (make-local-variable 'compile-command)
+           "go build -v && go test -v && go vet"))
+
+  (setq tab-width 4)
+  ;; guru settings
+  (go-guru-hl-identifier-mode)                    ; highlight identifiers
+  
+  ;; Key bindings specific to go-mode
+  (local-set-key (kbd "M-.") 'godef-jump)         ; Go to definition
+  (local-set-key (kbd "M-*") 'pop-tag-mark)       ; Return from whence you came
+  (local-set-key (kbd "M-p") 'compile)            ; Invoke compiler
+  (local-set-key (kbd "M-P") 'recompile)          ; Redo most recent compile cmd
+  (local-set-key (kbd "M-]") 'next-error)         ; Go to next error (or msg)
+  (local-set-key (kbd "M-[") 'previous-error)     ; Go to previous error or msg
+
+  ;; jto golang
+  (local-set-key (kbd "C-c C-c") 'godoc-at-point)
+ 
+  ;; Misc go stuff
+  (auto-complete-mode 1))                         ; Enable auto-complete mode
+
+;; Connect go-mode-hook with the function we just defined
+(add-hook 'go-mode-hook 'my-go-mode-hook)
+
+;;;
 
 
 
