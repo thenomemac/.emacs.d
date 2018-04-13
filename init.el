@@ -127,7 +127,8 @@
 ;; curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 ;; bash Miniconda3-latest-Linux-x86_64.sh -b
 ;; echo -e '\n# Miniconda\nexport PATH="$HOME/miniconda3/bin:$PATH"' >> ~/.bashrc
-;; conda install -y ipython jupyter numpy pandas scipy
+;; conda install -y numpy pandas scipy matplotlib mkl ipython jupyter requests flask bokeh tqdm pytest
+;; pip install jupyter-emacskeys
 ;; pip install jedi rope flake8 importmagic autopep8 yapf
 ;; mkdir -p ~/.config; echo -e '[flake8]\nmax-line-length = 120' >> ~/.config/flake8
 
