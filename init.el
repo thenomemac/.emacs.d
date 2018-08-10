@@ -46,12 +46,13 @@
     markdown-mode
     markdown-preview-mode
     ;; osx-clipboard
-    py-autopep8
+    ;; py-autopep8
+    py-isort
     rainbow-delimiters
     smart-mode-line
     web-mode
     yaml-mode
-    crosshairs
+    ;; crosshairs
     url
     ;; ess
     ;; slime
@@ -121,21 +122,26 @@
 ;;; _python.el -- custom python configuration
 
 (elpy-enable)
-(elpy-use-ipython)
+;; (elpy-use-ipython)
 
 ;; depends
 ;; curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 ;; bash Miniconda3-latest-Linux-x86_64.sh -b
 ;; echo -e '\n# Miniconda\nexport PATH="$HOME/miniconda3/bin:$PATH"' >> ~/.bashrc
-;; conda install -y numpy pandas scipy matplotlib mkl ipython jupyter requests flask bokeh tqdm pytest
+;; conda install -y python pip numpy pandas scipy matplotlib statsmodels mkl ipython jupyterlab requests flask bokeh tqdm pytest pyarrow line_profiler memory_profiler
 ;; pip install jupyter-emacskeys
-;; pip install jedi rope flake8 importmagic autopep8 yapf
+;; pip install jedi rope flake8 importmagic autopep8 yapf black mypy isort
 ;; mkdir -p ~/.config; echo -e '[flake8]\nmax-line-length = 120' >> ~/.config/flake8
 
 (setq elpy-rpc-backend "jedi")
 
-(setq python-shell-interpreter "ipython"
-    python-shell-interpreter-args "--simple-prompt --pprint")
+;; (setq python-shell-interpreter "ipython"
+;;     python-shell-interpreter-args "--simple-prompt --pprint")
+(setq python-shell-interpreter "jupyter"
+      python-shell-interpreter-args "console --simple-prompt"
+      python-shell-prompt-detect-failure-warning nil)
+(add-to-list 'python-shell-completion-native-disabled-interpreters
+             "jupyter")
 
 (when (require 'flycheck nil t)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
@@ -147,11 +153,16 @@
 ;; - W293 - Remove trailing whitespace on blank line.xs
 ;; - W391 - Remove trailing blank lines.
 ;; - W690 - Fix various deprecated code (via lib2to3).
-(require 'py-autopep8)
-(setq py-autopep8-options '("--ignore=E501,W690"))
-(add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+;; (require 'py-autopep8)
+;; (setq py-autopep8-options '("--ignore=E501,W690"))
+;; (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 
 (define-key global-map (kbd "RET") 'newline-and-indent)
+
+(defun my/python-mode-hook ()
+    (add-hook 'before-save-hook 'py-isort-before-save nil t)
+    (add-hook 'before-save-hook 'elpy-format-code nil t))
+(add-hook 'python-mode-hook 'my/python-mode-hook)
 
 (provide '_python)
 
@@ -459,6 +470,22 @@ of escape sequences and list of keys."
 (setq org-refile-targets '(("~/org/gtd.org" :maxlevel . 3)
                            ("~/org/someday.org" :level . 1)
                            ("~/org/tickler.org" :maxlevel . 2)))
+
+(setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+
+(defun my-org-agenda-skip-all-siblings-but-first ()
+  "Skip all but the first non-done entry."
+  (let (should-skip-entry)
+    (unless (org-current-is-todo)
+      (setq should-skip-entry t))
+    (save-excursion
+      (while (and (not should-skip-entry) (org-goto-sibling t))
+        (when (org-current-is-todo)
+          (setq should-skip-entry t))))
+    (when should-skip-entry
+      (or (outline-next-heading)
+          (goto-char (point-max))))))
+
 ;;;
 
 
@@ -533,3 +560,17 @@ of escape sequences and list of keys."
 ;;  ;; Your init file should contain only one such instance.
 ;;  ;; If there is more than one, they won't work right.
 ;;  )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (py-isort yaml-mode web-mode smart-mode-line rainbow-delimiters py-autopep8 neotree multiple-cursors monokai-theme material-theme markdown-preview-mode magit key-chord json-mode go-guru go-eldoc go-autocomplete go-add-tags flymake-go flycheck exec-path-from-shell elpy ein cyberpunk-theme company-go better-defaults avy))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

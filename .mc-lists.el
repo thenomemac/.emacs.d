@@ -5,6 +5,7 @@
       '(
         kill-region
         kmacro-insert-counter
+        org-delete-char
         ))
 
 (setq mc/cmds-to-run-once

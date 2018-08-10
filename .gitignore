@@ -4,5 +4,6 @@
 /request/
 /places
 /ac-comphist.dat
+/session*
 custom.el
 .\#*
