@@ -36,6 +36,7 @@
     cyberpunk-theme
     material-theme
     monokai-theme
+    spacemacs-theme
     elpy
     ein
     exec-path-from-shell
@@ -107,8 +108,9 @@
 ;; (osx-clipboard-mode +1)
 
 (global-linum-mode t)
+(column-number-mode t)
 
-(load-theme 'monokai t)
+(load-theme 'spacemacs-dark t)
 (windmove-default-keybindings)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -161,7 +163,9 @@
 
 (defun my/python-mode-hook ()
     (add-hook 'before-save-hook 'py-isort-before-save nil t)
-    (add-hook 'before-save-hook 'elpy-format-code nil t))
+    ;; (add-hook 'before-save-hook 'elpy-format-code nil t)
+    ;; (add-hook 'before-save-hook 'elpy-autopep8-fix-code nil t)
+    (add-hook 'before-save-hook 'elpy-black-fix-code nil t))
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 
 (provide '_python)
